@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Page Refresher",
+  "version": "1.0",
+  "permissions": ["tabs", "alarms", "<all_urls>", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
