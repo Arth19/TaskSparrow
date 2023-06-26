@@ -1,6 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Auto Page Refresher",
+    "name": "TaskSparrow",  
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
     "version": "1.0",
     "permissions": ["alarms", "tabs"],
     "host_permissions": ["<all_urls>"],
