@@ -1,14 +1,16 @@
 {
     "manifest_version": 3,
-    "name": "TaskSparrow",  
+    "name": "TaskSparrow",
     "icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
     },
     "version": "1.0",
-    "permissions": ["alarms", "tabs"],
-    "host_permissions": ["<all_urls>"],
+    "permissions": [
+      "tabs",
+      "https://www.raterhub.com/evaluation/rater/"
+    ],
     "action": {
       "default_popup": "popup.html"
     },
@@ -17,7 +19,7 @@
     },
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["https://www.raterhub.com/evaluation/rater/*"],
         "js": ["content.js"]
       }
     ]
