@@ -17,11 +17,22 @@
     .button-container {
       gap: 10px; /* Add some space between the buttons */
     }
+    .title-container {
+      align-items: center; /* Align items on the cross-axis */
+    }
+    .title-container img {
+      height: 3em; /* Set the height of the icon */
+      margin-right: 0.5em; /* Add some space between the icon and the text */
+    }
   </style>
 </head>
 <body class="text-center">
   <div id="content" class="d-flex flex-column justify-content-center align-items-center m-3">
-    <h1 class="mb-3">TaskSparrow</h1>
+    <div class="d-flex title-container mb-3">
+      <img src="icon.png" alt="Icon">
+      <h1>TaskSparrow </h1>
+      <img src="icon2.png" alt="Icon">
+    </div>
     <input id="interval" type="text" placeholder="Enter interval in seconds" class="form-control mb-3">
     <div class="d-flex button-container">
       <button id="start" class="btn btn-primary">Start</button>
