@@ -1,6 +1,7 @@
 let countdownIntervalId;
 
 document.getElementById('start').addEventListener('click', function() {
+  console.log('Start button clicked');
   const interval = document.getElementById('interval').value * 1000;  // convert to milliseconds
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.runtime.sendMessage({action: 'start', interval: interval, tabId: tabs[0].id});
@@ -14,8 +15,9 @@ document.getElementById('stop').addEventListener('click', function() {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'playSound') {
+  if (request.action === 'notificationSound') {
     document.getElementById('notificationSound').play();
+    document.getElementById('task-message').textContent = 'TASK!';
   }
 });
 
@@ -35,6 +37,7 @@ function startCountdown(seconds) {
 function stopCountdown() {
   clearInterval(countdownIntervalId);
   document.getElementById('countdown').textContent = '00:00';
+  document.getElementById('task-message').textContent = ''; // Limpe a mensagem TASK!
 }
 
 function displayTime(seconds) {
