@@ -15,5 +15,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 function checkButtonPresence(tabId) {
-  chrome.tabs.sendMessage(tabId, {action: 'checkButton'});
+  const allowedURLPattern = 'https://www.raterhub.com/evaluation/rater';
+
+  chrome.tabs.query({ active: true, currentWindow: true, url: allowedURLPattern }, tabs => {
+    const activeTab = tabs[0];
+
+    if (activeTab) {
+      chrome.tabs.sendMessage(tabId, { action: 'checkButton' }, response => {
+        if (!chrome.runtime.lastError && response && response.hasButton) {
+          chrome.runtime.sendMessage({ action: 'playSound' });
+        }
+      });
+    }
+  });
 }
