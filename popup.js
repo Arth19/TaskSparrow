@@ -17,7 +17,9 @@ document.getElementById('stop').addEventListener('click', function() {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'notificationSound') {
     document.getElementById('notificationSound').play();
-    document.getElementById('task-message').textContent = 'TASK!';
+    const taskMessageElement = document.getElementById('task-message');
+    taskMessageElement.textContent = 'TASK!';
+    taskMessageElement.classList.add('alert'); // Adiciona a classe 'alert' ao elemento
   }
 });
 
@@ -37,7 +39,9 @@ function startCountdown(seconds) {
 function stopCountdown() {
   clearInterval(countdownIntervalId);
   document.getElementById('countdown').textContent = '00:00';
-  document.getElementById('task-message').textContent = ''; // Limpe a mensagem TASK!
+  const taskMessageElement = document.getElementById('task-message');
+  taskMessageElement.textContent = ''; // Limpe a mensagem TASK!
+  taskMessageElement.classList.remove('alert'); // Remove a classe 'alert' do elemento
 }
 
 function displayTime(seconds) {
