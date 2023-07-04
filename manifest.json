@@ -7,8 +7,7 @@
       "128": "icon128.png"
   },
   "version": "1.1",
-  "permissions": ["alarms", "tabs"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["alarms"],
   "action": {
     "default_popup": "popup.html"
   },
