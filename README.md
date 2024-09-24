@@ -30,6 +30,9 @@ Siga os passos abaixo para começar a usar o **TaskSparrow**:
    - O Tampermonkey abrirá uma página de instalação automática.
    - Basta clicar em **Instalar**.
 
+### 4. Uma vez no Tampermonkey, vá para o Raterhub e ative o script(talvez seja necessário atualizar a página):
+- <img width="402" alt="image" src="https://github.com/user-attachments/assets/7ac5da1b-b42a-4f63-bf05-2c63599f84dd">
+
 ---
 
 ## 🎉 Pronto! Você está configurado!
